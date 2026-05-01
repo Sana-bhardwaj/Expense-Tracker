@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Basic Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- MAIN CONTAINER -->
+  <div class="container">
+
+    <!-- Page Title -->
+    <h1 class="title">Expense Tracker</h1>
+    <p class="subtitle">Track your daily expenses simply and clearly.</p>
+
+    <!-- FORM — Add a new expense -->
+    <div class="form-card">
+      <h2>Add Expense</h2>
+
+      <!-- Amount input -->
+      <div class="form-group">
+        <label for="amount">Amount (₹)</label>
+        <input type="number" id="amount" placeholder="e.g. 250" min="1" />
+      </div>
+
+      <!-- Category input -->
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input type="text" id="category" placeholder="e.g. Food, Travel, Bills" />
+      </div>
+
+      <!-- Add button -->
+      <button id="addBtn" onclick="addExpense()">Add Expense</button>
+    </div>
+
+    <!-- EXPENSES LIST — shows all saved expenses -->
+    <div class="list-card">
+      <h2>All Expenses</h2>
+
+      <!-- This div is filled dynamically by JavaScript -->
+      <div id="expenseList">
+        <p class="empty-msg">No expenses yet. Add one above!</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
