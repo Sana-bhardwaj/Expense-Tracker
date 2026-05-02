@@ -56,6 +56,15 @@ def add_expense():
 
     return jsonify({"message": "Expense added successfully"}), 201
 
+@app.route("/expenses/<int:expense_id>", methods=["DELETE"])
+def delete_expense(expense_id):
+    conn = get_db()
+    conn.execute("DELETE FROM expenses WHERE id = ?", (expense_id,))
+    conn.commit()
+    conn.close()
+
+    return jsonify({"message": "Expense deleted successfully"})
+
 
 if __name__ == "__main__":
     init_db()               
